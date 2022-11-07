@@ -1,13 +1,18 @@
-import todayConsumerPrices from "./today.js"
+import { nordpool } from 'nordpool';
+import {dateFormatter,timeFormatter } from "./dateTimeFormatter.js";
 
+const prices = new nordpool.Prices();
 
 const currentConsumerPrice = async () => {
-  const d = new Date();
-  let hour = d.getHours();
-  const zeroMinuteHour = hour+ ":00"
-  const todayPrices= await todayConsumerPrices();
-  const currentPrice=todayPrices.filter(t=>t.time==zeroMinuteHour);
+  const results = await prices.at({ area: 'FI' });
+  const price = Math.round(results.value * 1.24 * 100) / 1000;
+  const date = dateFormatter(results.date);
+  const time = timeFormatter(results.date);
+  const currentPrice={
+    date:date,
+    time:time,
+    price:price.toFixed(2),
+  }
   return currentPrice;
-
 };
 export default currentConsumerPrice;

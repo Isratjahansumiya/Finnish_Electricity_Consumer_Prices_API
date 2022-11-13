@@ -8,12 +8,12 @@ App will be running on http://localhost:5000
 
 1. GET /api/today
 
- Data: current day 24 hours prices,current hour price, next hour price
- today summary (avg,max,min)
+ Data: current day 24 hours prices,current hour price, next hour price,today summary (avg,max,min)
 
 2. GET /api/dayahead
 
  Data: 24 hours dayahead prices and summary (min,max,Avg)
+
  Note: Sometimes data is unavailable for some hours
 
 3. GET /api/daily?date=yyyy-mm-dd
@@ -30,7 +30,7 @@ https://www.nordpoolgroup.com/en/Market-data1/#/nordic/table
 
  https://www.nordpoolgroup.com/en/About-us/Terms-and-conditions-for-use/
 
-3. unofficial npm client
+3. Unofficial npm client
  https://github.com/samuelmr/nordpool-node
 
 

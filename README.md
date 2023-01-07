@@ -10,15 +10,22 @@ App will be running on http://localhost:5000
 
  Data: current day 24 hours prices,current hour price, next hour price,today summary (avg,max,min)
 
+ {"todayPrices": [],"currentPrice": {},"nextHourPrice": {},"todaySummary": {},"priceUnit": "snt/kWh}
+
 2. GET /api/dayahead
 
  Data: 24 hours dayahead prices and summary (min,max,Avg)
 
- Note: Sometimes data is unavailable for some hours
+ Note! The dayAheadPrices returns an empty array before 1 pm
+
+ {"dayAheadPrices": [],"priceUnit": "snt/kWh","dayAheadSummary": {}}
 
 3. GET /api/daily?date=yyyy-mm-dd
 
 Data: get any data with date query last two years
+
+{"dailyPricesPerHour": []}
+
 
 ## Data source
 
